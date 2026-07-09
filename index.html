@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#CC33FF,#CC99FF,#ffeaf4);
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    text-align:center;
+    color:white;
+    z-index:10;
+}
+
+h1{
+    font-size:35px;
+    text-shadow:2px 2px 10px #ff0095;
+}
+
+h2{
+    margin-top:1px;
+    font-size:25px;
+}
+
+p{
+    margin-top:1px;
+    font-size:20px;
+}
+
+button{
+    margin-top:30px;
+    padding:15px 35px;
+    border:none;
+    border-radius:40px;
+    background:#ff1493;
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.1);
+    background:#CC00FF;
+}
+
+#message{
+    display:none;
+    margin-top:30px;
+    background:#CCCCFF;
+    padding:20px;
+    border-radius:20px;
+    backdrop-filter:blur(10px);
+}
+
+.heart{
+    position:absolute;
+    color:red;
+    animation:float 10s linear infinite;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(100vh) scale(.5);
+        opacity:0;
+    }
+    30%{
+        opacity:1;
+    }
+    100%{
+        transform:translateY(-120vh) scale(1.5);
+        opacity:0;
+    }
+}
+
+.cake{
+    font-size:40px;
+    animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+    50%{
+        transform:translateY(-10px);
+    }
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<div class="cake">🎂</div>
+
+<h1> 🎉Happy Birth day🎉</h1>
+
+<h2>❤️สุขสันต์วันเกิดนะครับเนย❤️</h2>
+
+<p>
+ขอให้วันนี้เป็นวันที่เต็มไปด้วยรอยยิ้ม <br>
+มีความสุขและความรักจากคนรอบตัวเสมอ
+</p>
+
+<button onclick="showMessage()">
+💌 เปิดคำอวยพร
+</button>
+
+<div id="message">
+<h2>💖</h2>
+<p>
+❤️สุขสันต์วันเกิดนะคนเก่ง ❤️<br>
+ขอบคุณที่เข้ามาเป็นรอยยิ้มและ<br>
+ความสุขของเค้าขอให้เธอมีสุขภาพแข็งแรง<br> 
+สมหวังในทุกเรื่องไม่ว่าจะเจออะไร<br>
+ขอให้รู้ไว้ว่าจะมีเค้าอยู่ข้างๆเสมอ<br>
+รักเธอมากที่สุด 💕<br>
+จากโอ็ตคนที่รักเธอที่สุด🐷
+</p>
+
+</div>
+
+</div>
+
+<script>
+
+function showMessage(){
+    document.getElementById("message").style.display="block";
+}
+
+function createHeart(){
+
+    const heart=document.createElement("div");
+    heart.className="heart";
+    heart.innerHTML="❤";
+
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.fontSize=(20+Math.random()*40)+"px";
+    heart.style.animationDuration=(5+Math.random()*5)+"s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },10000);
+
+}
+
+setInterval(createHeart,300);
+
+</script>
+
+</body>
+</html>
